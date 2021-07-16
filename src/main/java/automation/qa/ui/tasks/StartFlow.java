@@ -12,7 +12,6 @@ import net.thucydides.core.annotations.Step;
 public class StartFlow implements Task {
 
     private String homePage;
-
     public StartFlow(String initPage) {
         switch (initPage.toUpperCase()) {
             case "INICIO":
@@ -21,7 +20,7 @@ public class StartFlow implements Task {
         }
     }
 
-    @Step("{0}Se inicia el proceso")
+    @Step("{0}Se inicia el proceso de tarjeta de credito por el canal escogido")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Open.url(homePage));
     }
